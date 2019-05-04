@@ -13,3 +13,9 @@ When writing embedded system software, a number of factors and tradeoffs must be
 - Cost: How can "low-cost" hardware affect the efficacy or create limitations on software?    
 
 -- An Embedded Software Primer -- David E. Simon, Pg. 11 
+
+Largest factor / challenge: change.
+- Which constraints above will be problematic *later* in product development? 
+- How will the application evolve over time and can/should the system support the change? (Hardware is not easy or cheap to upgrade or patch after manufacturing.)  
+
+-- Making Embedded Systems -- Elecia White. Pg. 5
