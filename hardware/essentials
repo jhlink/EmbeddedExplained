@@ -1,0 +1,30 @@
+# ADEPT Explanation: TBA
+
+# Research
+## Transisters: BJTs and MOSFETs  
+
+The latter is prevalent in digital electronics for reasons of performance, cost, and scale.   
+The former is common *depending on the application* due to concerns with power consumption, heat, and noise.   
+
+Sources: 
+[MOSFET Advantages Over BJT's] https://www.quora.com/Why-is-MOSFET-preferred-over-a-transistor
+[Technical Differentiation between BJT and FETs](https://www.quora.com/What-is-the-different-between-BJT-and-mosfet-transistor)
+
+## Underlying Physics
+
+Transistor innerworkings are founded on chemistry, surprisingly. 
+
+
+### Videos
+[Friendly Explanation](https://www.youtube.com/watch?v=IcrBqCFLHIY)  
+[Chemistry Perspective Explanation of Transistors](https://www.youtube.com/watch?v=60Qz051rD_w)
+[Deeper Explanation of BJTs via Diodes](https://www.youtube.com/watch?v=7ukDKVHnac4)
+[Deeper Explanation of MOSFETs](https://www.youtube.com/watch?v=stM8dgcY1CA)
+
+### Text
+[Physics|Chemistry Explanation of Transistors]
+
+Keyterms to Note: 
+- [Forward Bias](https://en.wikipedia.org/wiki/P%E2%80%93n_junction): Direction of easy current flow
+- [Reverse Bias](https://en.wikipedia.org/wiki/P%E2%80%93n_junction): Direction of little or no currrent flow
+
