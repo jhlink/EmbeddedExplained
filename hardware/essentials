@@ -27,4 +27,4 @@ Transistor innerworkings are founded on chemistry, surprisingly.
 Keyterms to Note: 
 - [Forward Bias](https://en.wikipedia.org/wiki/P%E2%80%93n_junction): Direction of easy current flow
 - [Reverse Bias](https://en.wikipedia.org/wiki/P%E2%80%93n_junction): Direction of little or no currrent flow
-
+- Depletion layer: A phenomenon occurring at an P-N junction, where the free electrons gravitate toward the P doped silicon wafer, creating a bounday preventing electron flow. A voltage potential or forward bias voltage is required for electrons to overcome the depletion layer to facilitate electron flow.     
