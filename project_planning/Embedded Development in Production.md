@@ -21,6 +21,7 @@ Largest factor / challenge: change.
 -- Making Embedded Systems -- Elecia White. Pg. 5
 
 Board Bring-Up: Testing, validating, and debugging of an embedded system prior to manufacturing. 
+[Further Details and Explanations](https://blog.asset-intertech.com/test_data_out/2012/03/what-is-board-bring-up.html)
 
 Successively iterates over the following phases ...
 Software Test: Recode
