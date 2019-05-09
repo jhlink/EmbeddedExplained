@@ -19,3 +19,13 @@ Largest factor / challenge: change.
 - How will the application evolve over time and can/should the system support the change? (Hardware is not easy or cheap to upgrade or patch after manufacturing.)  
 
 -- Making Embedded Systems -- Elecia White. Pg. 5
+
+Board Bring-Up: Testing, validating, and debugging of an embedded system prior to manufacturing. 
+
+Successively iterates over the following phases ...
+Software Test: Recode
+Assembly Test: Repair
+Hardware Test; Rework
+Firmware Test: Reflash
+
+
