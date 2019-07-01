@@ -1,8 +1,5 @@
 #include "isogram.h"
 
-
-bool parseString(const char phrase[]); 
-
 bool shouldSkip(const char ichar) {
   bool result = false;
   if ( ichar == ' ' ) {
@@ -18,26 +15,27 @@ bool is_isogram(const char phrase[])
 {
   bool result = false;
   if ( phrase ) {
-    size_t string_size = strlen(phrase);
-    result = string_size == 0;
+    size_t stringSize = strlen(phrase);
+    result = stringSize == 0;
 
-    if ( string_size ) {
-      parseString(phrase);
+    if ( stringSize ) {
+      result = is_isogram_helper(phrase, stringSize);
     }
   }
 
   return result;
 }
 
-bool parseString(const char phrase[]) {
-  const int alphabet_limit = 26;
-  char* alphabet_array = (char*) malloc(sizeof(char) * 26);
-  memset(alphabet_array, 0, 26);
+bool is_isogram_helper(const char phrase[], size_t istringSize) {
+  bool result = true;
 
-  size_t str_index = 0;
-  while ( str_index < string_size ) {
-    result = true;
-    char currChar = phrase[str_index]; 
+  const int alphabet_limit = 26;
+  char* alphabet_array = (char*) malloc(sizeof(char) * alphabet_limit);
+  memset(alphabet_array, 0, alphabet_limit);
+
+  size_t strIndex = 0;
+  while ( strIndex < istringSize ) {
+    char currChar = phrase[strIndex]; 
 
     if ( !shouldSkip(currChar) ) {
       currChar = tolower(currChar);
@@ -51,8 +49,10 @@ bool parseString(const char phrase[]) {
       }
     }
 
-    str_index++; 
+    strIndex++; 
   }
 
   free(alphabet_array);
+
+  return result;
 }
