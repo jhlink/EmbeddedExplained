@@ -14,7 +14,7 @@ size_t count_delims(const char *src, const char *delim) {
 char* abbreviate(const char *phrase) {
   char* result = NULL;
 
-  if ( phrase ) {
+  if ( phrase && strlen(phrase) > 0) {
     // Two is added for the starting letter and null termination
     size_t acronym_size = count_delims(phrase, " ") + 2;
     size_t phrase_len = strlen(phrase);

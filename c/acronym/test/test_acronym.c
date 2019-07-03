@@ -85,7 +85,6 @@ static void test_all_caps_words(void)
 
 static void test_empty_string(void)
 {
-   TEST_IGNORE();
    char *phrase = "";
    char *expected = NULL;
    test_abbreviation(phrase, expected);
