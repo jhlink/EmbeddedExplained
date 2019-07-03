@@ -20,17 +20,15 @@ char* abbreviate(const char *phrase) {
     size_t phrase_len = strlen(phrase);
 
     result = (char*) malloc(sizeof(char) * acronym_size);
-
     assert(result != NULL);
-
-    int acronym_index = 0;
-    result[acronym_index++] = phrase[0];
     result[acronym_size - 1] = '\0';
 
+    int acronym_index = 0;
     for ( size_t i = 0; i < phrase_len - 1; i++ ) {
-      if (phrase[i] == ' ' || phrase[i] == '-') {
-        char uppercase_letter = toupper(phrase[i + 1]);
-        result[acronym_index++] = uppercase_letter;
+      if (i == 0) {
+        result[acronym_index++] = toupper(phrase[0]);
+      } else if (phrase[i] == ' ' || phrase[i] == '-') {
+        result[acronym_index++] = toupper(phrase[i + 1]);
       }
     }
   }
