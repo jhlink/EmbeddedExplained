@@ -1,8 +1,11 @@
 #include "acronym.h"
 
 char* abbreviate(const char *phrase) {
-  char x = phrase[0]; 
-  printf("%c", x);
+  char* result = NULL; 
 
-  return NULL;
+  if ( phrase ) {
+
+  }
+
+  return result;
 }
