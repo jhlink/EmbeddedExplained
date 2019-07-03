@@ -92,7 +92,6 @@ static void test_empty_string(void)
 
 static void test_all_words_starting_with_lowercase(void)
 {
-   TEST_IGNORE();
    char *phrase = "for what it's worth";
    char *expected = "FWIW";
    test_abbreviation(phrase, expected);
