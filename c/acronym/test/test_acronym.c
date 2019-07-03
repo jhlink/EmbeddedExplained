@@ -26,6 +26,14 @@ static void test_null_string(void)
 }
 
 
+static void test_no_delims(void)
+{
+   char *phrase = "PortableNetworkGraphics";
+   size_t actual = count_delims(phrase, " ");
+   size_t expected = 0;
+   TEST_ASSERT_EQUAL(expected, actual);
+}
+
 static void test_count_basic_delims(void)
 {
    char *phrase = "Portable Network Graphics";
@@ -113,6 +121,7 @@ int main(void)
 
    RUN_TEST(test_basic_abbreviation);
    RUN_TEST(test_count_basic_delims);
+   RUN_TEST(test_no_delims);
    RUN_TEST(test_null_string);
    RUN_TEST(test_lower_case_words);
    RUN_TEST(test_punctuation);
