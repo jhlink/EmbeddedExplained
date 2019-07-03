@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 char *abbreviate(const char *phrase);
 size_t count_delims(const char *src, const char *delim);
