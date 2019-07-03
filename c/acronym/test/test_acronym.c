@@ -25,7 +25,6 @@ static void test_null_string(void)
    test_abbreviation(phrase, expected);
 }
 
-
 static void test_no_delims(void)
 {
    char *phrase = "PortableNetworkGraphics";
@@ -44,7 +43,6 @@ static void test_count_basic_delims(void)
 
 static void test_basic_abbreviation(void)
 {
-   TEST_IGNORE();
    char *phrase = "Portable Network Graphics";
    char *expected = "PNG";
    test_abbreviation(phrase, expected);
