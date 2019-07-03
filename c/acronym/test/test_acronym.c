@@ -78,7 +78,6 @@ static void test_hyphenated(void)
 
 static void test_all_caps_words(void)
 {
-   TEST_IGNORE();
    char *phrase = "PHP: Hypertext Preprocessor";
    char *expected = "PHP";
    test_abbreviation(phrase, expected);
