@@ -71,7 +71,6 @@ static void test_non_acronym_all_caps_words(void)
 
 static void test_hyphenated(void)
 {
-   TEST_IGNORE();
    char *phrase = "Complementary metal-oxide semiconductor";
    char *expected = "CMOS";
    test_abbreviation(phrase, expected);

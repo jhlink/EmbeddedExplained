@@ -28,7 +28,7 @@ char* abbreviate(const char *phrase) {
     result[acronym_size - 1] = '\0';
 
     for ( size_t i = 0; i < phrase_len - 1; i++ ) {
-      if (phrase[i] == ' ') {
+      if (phrase[i] == ' ' || phrase[i] == '-') {
         char uppercase_letter = toupper(phrase[i + 1]);
         result[acronym_index++] = uppercase_letter;
       }
