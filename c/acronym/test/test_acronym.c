@@ -25,6 +25,15 @@ static void test_null_string(void)
    test_abbreviation(phrase, expected);
 }
 
+
+static void test_count_basic_delims(void)
+{
+   char *phrase = "Portable Network Graphics";
+   size_t actual = count_delims(phrase, " ");
+   size_t expected = 2;
+   TEST_ASSERT_EQUAL(expected, actual);
+}
+
 static void test_basic_abbreviation(void)
 {
    TEST_IGNORE();
@@ -103,6 +112,7 @@ int main(void)
    UnityBegin("test/test_acronym.c");
 
    RUN_TEST(test_basic_abbreviation);
+   RUN_TEST(test_count_basic_delims);
    RUN_TEST(test_null_string);
    RUN_TEST(test_lower_case_words);
    RUN_TEST(test_punctuation);
