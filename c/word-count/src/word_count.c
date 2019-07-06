@@ -14,10 +14,13 @@ static word_count_word_t* find_word_struct(const char *token_string, word_count_
 static void sanitize_string(char input_string[]) {
   int i = 0;
   while ( input_string[i] != '\0' && i < MAX_WORD_LENGTH ) {
-    if ( ispunct(input_string[i]) ) {
-      input_string[i] = ' ';
+    char curr_char = input_string[i];
+    
+    if ( curr_char != '\'' && ispunct( curr_char ) ) {
+       input_string[i] = ' ';
     }
     input_string[i] = tolower(input_string[i]); 
+
     i++;
   }
 }
