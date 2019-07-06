@@ -17,6 +17,7 @@ static void sanitize_string(char input_string[]) {
     if ( ispunct(input_string[i]) ) {
       input_string[i] = ' ';
     }
+    input_string[i] = tolower(input_string[i]); 
     i++;
   }
 }
