@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 #define MAX_WORDS 20            // at most MAX_WORDS can be found in the test input string
 #define MAX_WORD_LENGTH 50      // no individual word can exceed this length
