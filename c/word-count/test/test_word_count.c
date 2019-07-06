@@ -306,7 +306,6 @@ static void test_word_count_with_quotation(void)
 
 static void test_word_count_from_example(void)
 {
-   TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "olly olly in come free";
