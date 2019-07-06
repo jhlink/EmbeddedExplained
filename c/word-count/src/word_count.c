@@ -11,11 +11,13 @@ static word_count_word_t* find_word_struct(const char *token_string, word_count_
   return result;
 }
 
-static bool is_value_within_excl_range(int value, int lwr_range, int upr_range) {
+static bool is_value_within_excl_range(int value, int lwr_range, int upr_range) 
+{
   return value > lwr_range && value < upr_range;
 }
 
-static bool is_surr_by_alph(const char* str, int index) {
+static bool is_surr_by_alph(const char* str, int index) 
+{
   bool result = false;
   if ( is_value_within_excl_range(index, 0, MAX_WORD_LENGTH - 1) ) {
     result = isalpha(str[index - 1]) && isalpha(str[index + 1]);
@@ -23,7 +25,8 @@ static bool is_surr_by_alph(const char* str, int index) {
   return result;
 }
 
-static void sanitize_string(char input_string[]) {
+static void sanitize_string(char input_string[]) 
+{
   int i = 0;
   while ( input_string[i] != '\0' && i < MAX_WORD_LENGTH ) {
     char curr_char = input_string[i];
