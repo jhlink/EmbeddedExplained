@@ -20,7 +20,7 @@ int word_count(const char *input_text, word_count_word_t * words) {
   strcpy(temp_input_text, input_text);
 
   //  Tokenize strings 
-  char* token = strtok(temp_input_text, " ,");
+  char* token = strtok(temp_input_text, " ,\n");
 
   //  Scrub input word_count_word_t struct  
   memset(words, 0, sizeof(word_count_word_t) * MAX_WORDS);
@@ -38,7 +38,7 @@ int word_count(const char *input_text, word_count_word_t * words) {
       unique_word_index++;
     }
 
-    token = strtok(NULL, " ,");
+    token = strtok(NULL, " ,\n");
   }
 
   return unique_word_count;
