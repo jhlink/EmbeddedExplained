@@ -5,6 +5,17 @@ static void initialize_word_struct(word_count_word_t * word_struct) {
   word_struct->count = 0;
 }
 
+static word_count_word_t* find_word_struct(const char *token_string, word_count_word_t words[], int cur_index) {
+  word_count_word_t* result = NULL;
+  for ( int i = 0; i <= cur_index; i++) {
+    if ( !strcmp( words[i].text, token_string ) ) {
+      result = &words[i];
+    }
+  }
+
+  return result;
+}
+
 int word_count(const char *input_text, word_count_word_t * words) {
   int unique_word_count = 0;
 
@@ -19,11 +30,17 @@ int word_count(const char *input_text, word_count_word_t * words) {
   while ( token != NULL ) {
     initialize_word_struct(words + unique_word_index);
 
-    strcpy(words[unique_word_index].text, token);
-    words[unique_word_index].count++;
+    word_count_word_t* existing_struct = find_word_struct(token, words, unique_word_index);
 
-    unique_word_count++;
-    unique_word_index++;
+    if ( existing_struct ) {
+      existing_struct->count++;
+    } else {
+      strcpy(words[unique_word_index].text, token);
+      words[unique_word_index].count++;
+      unique_word_count++;
+      unique_word_index++;
+    }
+
     token = strtok(NULL, " ");
   }
 
