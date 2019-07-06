@@ -11,13 +11,23 @@ static word_count_word_t* find_word_struct(const char *token_string, word_count_
   return result;
 }
 
-int word_count(const char *input_text, word_count_word_t * words) {
+static void sanitize_string(char input_string[]) {
+  int i = 0;
+  while ( input_string[i] != '\0' && i < MAX_WORD_LENGTH ) {
+    if ( ispunct(input_string[i]) ) {
+      input_string[i] = ' ';
+    }
+    i++;
+  }
+}
 
+int word_count(const char *input_text, word_count_word_t * words) {
   int unique_word_count = 0;
 
   //  Copy Array
   char* temp_input_text = (char*) malloc(sizeof(char) * (strlen(input_text) + 1)); 
   strcpy(temp_input_text, input_text);
+  sanitize_string(temp_input_text);
 
   //  Tokenize strings 
   char* token = strtok(temp_input_text, " ,\n");
@@ -41,5 +51,6 @@ int word_count(const char *input_text, word_count_word_t * words) {
     token = strtok(NULL, " ,\n");
   }
 
+  free(temp_input_text);
   return unique_word_count;
 }
