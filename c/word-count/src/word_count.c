@@ -45,6 +45,18 @@ static void sanitize_string(char input_string[])
   }
 }
 
+static int add_word_to_struct(const char *token_string, word_count_word_t words[], int cur_index) {
+  int op_result = 0;
+
+  if ( strlen(token_string) > MAX_WORD_LENGTH ) {
+    op_result = EXCESSIVE_LENGTH_WORD;
+  } else {
+    strcpy(words[cur_index].text, token_string);
+    words[cur_index].count++;
+  }
+  return op_result;
+}
+
 int word_count(const char *input_text, word_count_word_t * words) {
   int unique_word_count = 0;
 
@@ -66,8 +78,13 @@ int word_count(const char *input_text, word_count_word_t * words) {
     if ( existing_struct ) {
       existing_struct->count++;
     } else {
-      strcpy(words[unique_word_index].text, token);
-      words[unique_word_index].count++;
+      int word_addition_result = add_word_to_struct(token, words, unique_word_index);
+
+      if ( word_addition_result < 0 ) {
+        unique_word_count = word_addition_result;
+        break;
+      }
+
       unique_word_count++;
       unique_word_index++;
     }
