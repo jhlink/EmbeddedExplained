@@ -113,7 +113,6 @@ static void test_word_count_multiple_occurrences_of_a_word(void)
 
 static void test_word_count_handles_cramped_lists(void)
 {
-   TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "one,two,three";

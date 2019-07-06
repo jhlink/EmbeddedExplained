@@ -1,10 +1,5 @@
 #include "word_count.h"
 
-static void initialize_word_struct(word_count_word_t * word_struct) {
-  memset(word_struct->text, 0, MAX_WORD_LENGTH);  
-  word_struct->count = 0;
-}
-
 static word_count_word_t* find_word_struct(const char *token_string, word_count_word_t words[], int cur_index) {
   word_count_word_t* result = NULL;
   for ( int i = 0; i <= cur_index; i++) {
@@ -17,6 +12,7 @@ static word_count_word_t* find_word_struct(const char *token_string, word_count_
 }
 
 int word_count(const char *input_text, word_count_word_t * words) {
+
   int unique_word_count = 0;
 
   //  Copy Array
@@ -24,12 +20,13 @@ int word_count(const char *input_text, word_count_word_t * words) {
   strcpy(temp_input_text, input_text);
 
   //  Tokenize strings 
-  char* token = strtok(temp_input_text, " ");
+  char* token = strtok(temp_input_text, " ,");
+
+  //  Scrub input word_count_word_t struct  
+  memset(words, 0, sizeof(word_count_word_t) * MAX_WORDS);
 
   int unique_word_index = 0;
   while ( token != NULL ) {
-    initialize_word_struct(words + unique_word_index);
-
     word_count_word_t* existing_struct = find_word_struct(token, words, unique_word_index);
 
     if ( existing_struct ) {
@@ -41,7 +38,7 @@ int word_count(const char *input_text, word_count_word_t * words) {
       unique_word_index++;
     }
 
-    token = strtok(NULL, " ");
+    token = strtok(NULL, " ,");
   }
 
   return unique_word_count;
