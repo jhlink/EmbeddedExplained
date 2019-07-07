@@ -30,7 +30,6 @@ static void test_perfect_lowercase_pangram(void)
 
 static void test_lowercase_pangram(void)
 {
-   TEST_IGNORE();
    const char sentence[] = "the quick brown fox jumps over the lazy dog";
 
    TEST_ASSERT_TRUE(is_pangram(sentence));
