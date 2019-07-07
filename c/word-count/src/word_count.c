@@ -50,6 +50,8 @@ static int add_word_to_struct(const char *token_string, word_count_word_t words[
 
   if ( strlen(token_string) > MAX_WORD_LENGTH ) {
     op_result = EXCESSIVE_LENGTH_WORD;
+  } else if ( cur_index >= MAX_WORDS ) {
+    op_result = EXCESSIVE_NUMBER_OF_WORDS;
   } else {
     strcpy(words[cur_index].text, token_string);
     words[cur_index].count++;
