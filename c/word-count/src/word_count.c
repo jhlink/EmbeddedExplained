@@ -73,14 +73,13 @@ int word_count(const char *input_text, word_count_word_t * words) {
   //  Scrub input word_count_word_t struct
   memset(words, 0, sizeof(word_count_word_t) * MAX_WORDS);
 
-  int unique_word_index = 0;
   while ( token != NULL ) {
-    word_count_word_t* existing_struct = find_word_struct(token, words, unique_word_index);
+    word_count_word_t* existing_struct = find_word_struct(token, words, unique_word_count);
 
     if ( existing_struct ) {
       existing_struct->count++;
     } else {
-      int word_addition_result = add_word_to_struct(token, words, unique_word_index);
+      int word_addition_result = add_word_to_struct(token, words, unique_word_count);
 
       if ( word_addition_result < 0 ) {
         unique_word_count = word_addition_result;
@@ -88,7 +87,6 @@ int word_count(const char *input_text, word_count_word_t * words) {
       }
 
       unique_word_count++;
-      unique_word_index++;
     }
 
     token = strtok(NULL, " ,\n");
