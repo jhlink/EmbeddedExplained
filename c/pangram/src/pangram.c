@@ -12,11 +12,11 @@ static bool is_alph_array_nonzero(int alpha[])
 
 bool is_pangram(const char *sentence) {
   bool result = false;
+  int alpha[ALPHABET_LENGTH] = {0};
 
   if ( sentence ) {
     int sentence_len = strlen(sentence);
     if ( sentence_len >= ALPHABET_LENGTH ) {
-      int *alpha = (int*) calloc(ALPHABET_LENGTH, sizeof(int));
 
       for (int i = 0; i < sentence_len; i++) {
         if ( isalpha(sentence[i]) ) {
@@ -27,7 +27,6 @@ bool is_pangram(const char *sentence) {
       }
 
       result = is_alph_array_nonzero(alpha);
-      free(alpha);
     }
   }
 
