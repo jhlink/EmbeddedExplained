@@ -37,7 +37,6 @@ static void test_lowercase_pangram(void)
 
 static void test_missing_character_x(void)
 {
-   TEST_IGNORE();
    const char sentence[] =
        "a quick movement of the enemy will jeopardize five gunboats";
 
@@ -46,7 +45,6 @@ static void test_missing_character_x(void)
 
 static void test_another_missing_h(void)
 {
-   TEST_IGNORE();
    const char sentence[] = "five boxing wizards jump quickly at it";
 
    TEST_ASSERT_FALSE(is_pangram(sentence));
