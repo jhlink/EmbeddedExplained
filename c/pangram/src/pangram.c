@@ -10,6 +10,13 @@ static bool is_alph_array_nonzero(int alpha[])
   return result;
 }
 
+static int get_lwr_case_ascii_value(char input_char) {
+  char lower_case_letter = tolower(input_char);
+  int alph_index = (lower_case_letter - 97) % ALPHABET_LENGTH;
+
+  return alph_index;
+}
+
 bool is_pangram(const char *sentence) {
   bool result = false;
   int alpha[ALPHABET_LENGTH] = {0};
@@ -20,8 +27,7 @@ bool is_pangram(const char *sentence) {
 
       for (int i = 0; i < sentence_len; i++) {
         if ( isalpha(sentence[i]) ) {
-          char lower_case_letter = tolower(sentence[i]);
-          int alph_index = (lower_case_letter - 97) % ALPHABET_LENGTH;
+          int alph_index = get_lwr_case_ascii_value(sentence[i]);
           alpha[alph_index]++;
         }
       }
