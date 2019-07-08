@@ -73,7 +73,6 @@ static void test_missing_letters_replaced_by_numbers(void)
 
 static void test_mixed_case_and_punctuation(void)
 {
-   TEST_IGNORE();
    const char sentence[] = "\"Five quacking Zephyrs jolt my wax bed.\"";
 
    TEST_ASSERT_TRUE(is_pangram(sentence));
