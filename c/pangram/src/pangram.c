@@ -27,6 +27,7 @@ bool is_pangram(const char *sentence) {
       }
 
       result = is_alph_array_nonzero(alpha);
+      free(alpha);
     }
   }
 
