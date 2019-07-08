@@ -80,7 +80,6 @@ static void test_mixed_case_and_punctuation(void)
 
 static void test_upper_and_lower_case_of_same_character(void)
 {
-   TEST_IGNORE();
    const char sentence[] = "the quick brown fox jumps over with lazy FX";
 
    TEST_ASSERT_FALSE(is_pangram(sentence));
