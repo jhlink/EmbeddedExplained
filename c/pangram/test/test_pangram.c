@@ -52,7 +52,6 @@ static void test_another_missing_h(void)
 
 static void test_pangram_with_underscores(void)
 {
-   TEST_IGNORE();
    const char sentence[] = "the_quick_brown_fox_jumps_over_the_lazy_dog";
 
    TEST_ASSERT_TRUE(is_pangram(sentence));
@@ -60,7 +59,6 @@ static void test_pangram_with_underscores(void)
 
 static void test_pangram_with_numbers(void)
 {
-   TEST_IGNORE();
    const char sentence[] = "the 1 quick brown fox jumps over the 2 lazy dogs";
 
    TEST_ASSERT_TRUE(is_pangram(sentence));
