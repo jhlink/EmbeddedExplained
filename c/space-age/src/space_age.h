@@ -4,10 +4,10 @@
 #include <stdbool.h>
 #include <math.h>
 
-//  Equivalent to 365.25 Earth Days
-#define EARTH 31557600
+#define SECONDS_PER_DAY 86400
+#define DAYS_ON_EARTH 365.25
 
-//  Subsequent planet values are in Earth Years
+#define EARTH 1
 #define MERCURY 0.2408467
 #define VENUS 0.61519726
 #define MARS 1.8808158
