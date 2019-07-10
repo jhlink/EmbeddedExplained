@@ -21,37 +21,31 @@ static void test_convert_mercury_year(void)
 
 static void test_convert_venus_year(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FLOAT_WITHIN(1, 9.78, convert_planet_age(VENUS, 189839836));
 }
 
 static void test_convert_mars_year(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FLOAT_WITHIN(1, 39.25, convert_planet_age(MARS, 2329871239));
 }
 
 static void test_convert_jupiter_year(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FLOAT_WITHIN(0.1, 2.41, convert_planet_age(JUPITER, 901876382));
 }
 
 static void test_convert_saturn_year(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FLOAT_WITHIN(0.1, 3.23, convert_planet_age(SATURN, 3000000000));
 }
 
 static void test_convert_uranus_year(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FLOAT_WITHIN(0.1, 1.21, convert_planet_age(URANUS, 3210123456));
 }
 
 static void test_convert_neptune_year(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FLOAT_WITHIN(0.1, 1.58, convert_planet_age(NEPTUNE, 8210123456));
 }
 
