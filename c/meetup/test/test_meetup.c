@@ -419,104 +419,87 @@ static void test_fourth_Sunday_of_April_2013(void)
 
 static void test_last_Monday_of_March_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(25, meetup_day_of_month(2013, 3, "last", "Monday"));
 }
 
 static void test_last_Monday_of_April_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(29, meetup_day_of_month(2013, 4, "last", "Monday"));
 }
 
 static void test_last_Tuesday_of_May_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(28, meetup_day_of_month(2013, 5, "last", "Tuesday"));
 }
 
 static void test_last_Tuesday_of_June_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(25, meetup_day_of_month(2013, 6, "last", "Tuesday"));
 }
 
 static void test_last_Wednesday_of_July_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(31, meetup_day_of_month(2013, 7, "last", "Wednesday"));
 }
 
 static void test_last_Wednesday_of_August_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(28, meetup_day_of_month(2013, 8, "last", "Wednesday"));
 }
 
 static void test_last_Thursday_of_September_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(26, meetup_day_of_month(2013, 9, "last", "Thursday"));
 }
 
 static void test_last_Thursday_of_October_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(31, meetup_day_of_month(2013, 10, "last", "Thursday"));
 }
 
 static void test_last_Friday_of_November_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(29, meetup_day_of_month(2013, 11, "last", "Friday"));
 }
 
 static void test_last_Friday_of_December_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(27, meetup_day_of_month(2013, 12, "last", "Friday"));
 }
 
 static void test_last_Saturday_of_January_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(26, meetup_day_of_month(2013, 1, "last", "Saturday"));
 }
 
 static void test_last_Saturday_of_February_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(23, meetup_day_of_month(2013, 2, "last", "Saturday"));
 }
 
 static void test_last_Sunday_of_March_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(31, meetup_day_of_month(2013, 3, "last", "Sunday"));
 }
 
 static void test_last_Sunday_of_April_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(28, meetup_day_of_month(2013, 4, "last", "Sunday"));
 }
 
 static void test_last_Wednesday_of_February_2012(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(29, meetup_day_of_month(2012, 2, "last", "Wednesday"));
 }
 
 static void test_last_Wednesday_of_December_2014(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(31,
                          meetup_day_of_month(2014, 12, "last", "Wednesday"));
 }
 
 static void test_last_Sunday_of_February_2015(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(22, meetup_day_of_month(2015, 2, "last", "Sunday"));
 }
 
