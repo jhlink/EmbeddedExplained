@@ -18,6 +18,7 @@ static void update_month_and_year(int year, int month, int day, struct tm* timei
   mktime(timeinfo);
 }
 
+//  Modifies timeinfo to closest possible date given the limit.  
 static void query_possible_dates_within_limit(int target_weekday_index, int early_possible_date, struct tm* timeinfo) { 
   while ( target_weekday_index != timeinfo->tm_wday 
       && timeinfo->tm_mday > early_possible_date ) {
@@ -40,6 +41,7 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
     int max_cal_days = MONTH_DAYS[month - 1]; 
     update_month_and_year(year, month, max_cal_days, timeinfo);
 
+    //  Handle leap days for February
     if ( timeinfo->tm_mon != month - 1) {
       timeinfo->tm_mday--;
       mktime(timeinfo);
