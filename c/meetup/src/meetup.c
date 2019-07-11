@@ -13,7 +13,7 @@ static int match_weekday(char week_day[]) {
 
 static int match_nth_meet_day(char meet_day[]) {
   int result = 0;  
-  for ( int i = 0; i < 3; i++ ) {
+  for ( int i = 0; i < 4; i++ ) {
     if ( !strcmp(meet_day, NUMBERED_MEET_DAY[i]) ) {
       result = i;
     }
