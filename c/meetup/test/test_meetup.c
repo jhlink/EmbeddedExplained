@@ -505,7 +505,6 @@ static void test_last_Sunday_of_February_2015(void)
 
 static void test_first_Friday_of_December_2012(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(7, meetup_day_of_month(2012, 12, "first", "Friday"));
 }
 
