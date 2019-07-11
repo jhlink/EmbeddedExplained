@@ -20,9 +20,7 @@ static void update_month_and_year(int year, int month, int day, struct tm* timei
 
 int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
   int result = 0;
-  struct tm * timeinfo; 
-
-  timeinfo = (struct tm *) calloc(1, sizeof(struct tm));
+  struct tm * timeinfo = (struct tm *) calloc(1, sizeof(struct tm));
 
   int matched_weekday_index = find_string_in_array(week_day, WEEK_DAYS, 7);
 
