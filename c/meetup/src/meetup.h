@@ -9,7 +9,7 @@
 
 static const char TEENTH_MEET_DAY[] = "teenth";
 static const char *WEEK_DAYS[] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-static const char *NUMBERED_MEET_DAY[] = { "first", "second" };
+static const char *NUMBERED_MEET_DAY[] = { "first", "second", "third" };
 
 int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]); 
 
