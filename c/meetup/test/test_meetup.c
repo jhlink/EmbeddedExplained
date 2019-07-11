@@ -195,90 +195,76 @@ static void test_first_Sunday_of_April_2013(void)
 
 static void test_second_Monday_of_March_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(11, meetup_day_of_month(2013, 3, "second", "Monday"));
 }
 
 static void test_second_Monday_of_April_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(8, meetup_day_of_month(2013, 4, "second", "Monday"));
 }
 
 static void test_second_Tuesday_of_May_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(14, meetup_day_of_month(2013, 5, "second", "Tuesday"));
 }
 
 static void test_second_Tuesday_of_June_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(11, meetup_day_of_month(2013, 6, "second", "Tuesday"));
 }
 
 static void test_second_Wednesday_of_July_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(10,
                          meetup_day_of_month(2013, 7, "second", "Wednesday"));
 }
 
 static void test_second_Wednesday_of_August_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(14,
                          meetup_day_of_month(2013, 8, "second", "Wednesday"));
 }
 
 static void test_second_Thursday_of_September_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(12,
                          meetup_day_of_month(2013, 9, "second", "Thursday"));
 }
 
 static void test_second_Thursday_of_October_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(10,
                          meetup_day_of_month(2013, 10, "second", "Thursday"));
 }
 
 static void test_second_Friday_of_November_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(8, meetup_day_of_month(2013, 11, "second", "Friday"));
 }
 
 static void test_second_Friday_of_December_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(13, meetup_day_of_month(2013, 12, "second", "Friday"));
 }
 
 static void test_second_Saturday_of_January_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(12,
                          meetup_day_of_month(2013, 1, "second", "Saturday"));
 }
 
 static void test_second_Saturday_of_February_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(9, meetup_day_of_month(2013, 2, "second", "Saturday"));
 }
 
 static void test_second_Sunday_of_March_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(10, meetup_day_of_month(2013, 3, "second", "Sunday"));
 }
 
 static void test_second_Sunday_of_April_2013(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL_INT(14, meetup_day_of_month(2013, 4, "second", "Sunday"));
 }
 
