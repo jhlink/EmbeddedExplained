@@ -27,27 +27,29 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
   if ( !strcmp(meet_day, TEENTH_MEET_DAY) ) {
     update_month_and_year(year, month, 13, timeinfo);
 
-    while ( matched_weekday_index != timeinfo->tm_wday && timeinfo->tm_mday < 20 ) {
+    while ( matched_weekday_index != timeinfo->tm_wday 
+            && timeinfo->tm_mday < 20 ) {
       timeinfo->tm_mday++;
       mktime(timeinfo);
     }
   } else if ( !strcmp(meet_day, LAST_MEET_DAY) ) {
     int max_cal_days = MONTH_DAYS[month - 1]; 
     update_month_and_year(year, month, max_cal_days, timeinfo);
+
     if ( timeinfo->tm_mon != month - 1) {
       timeinfo->tm_mday--;
       mktime(timeinfo);
     }
 
     while ( matched_weekday_index != timeinfo->tm_wday 
-            && timeinfo->tm_mday > (max_cal_days - 7) 
-            && month - 1 == timeinfo->tm_mon ) {
+            && timeinfo->tm_mday > (max_cal_days - 7) ) {
       timeinfo->tm_mday--;
       mktime(timeinfo);
     }
   } else {
-    int week_day_offset = find_string_in_array(meet_day, NUMBERED_MEET_DAY, 5) * 7;
     update_month_and_year(year, month, 1, timeinfo);
+
+    int week_day_offset = find_string_in_array(meet_day, NUMBERED_MEET_DAY, 5) * 7;
     timeinfo->tm_mday += week_day_offset;
     mktime(timeinfo);
 
