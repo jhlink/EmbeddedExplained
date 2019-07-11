@@ -13,7 +13,7 @@ static int match_weekday(char week_day[]) {
 
 static int match_nth_meet_day(char meet_day[]) {
   int result = 0;  
-  for ( int i = 0; i < 4; i++ ) {
+  for ( int i = 0; i < 5; i++ ) {
     if ( !strcmp(meet_day, NUMBERED_MEET_DAY[i]) ) {
       result = i;
     }
@@ -70,10 +70,11 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
       int weekoffset = matched_weekday_index > offset ? matched_weekday_index : matched_weekday_index + 7;
 
       timeinfo->tm_mday += weekoffset - offset;
+      mktime(timeinfo);
     }
   }
 
-  result = timeinfo->tm_mday;
+  result = timeinfo->tm_mon == (month - 1) ? timeinfo->tm_mday : 0;
   free(timeinfo);
   return result;
 }
