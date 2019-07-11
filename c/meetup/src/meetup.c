@@ -18,6 +18,14 @@ static void update_month_and_year(int year, int month, int day, struct tm* timei
   mktime(timeinfo);
 }
 
+static void query_possible_dates_within_limit(int target_weekday_index, int early_possible_date, struct tm* timeinfo) { 
+  while ( target_weekday_index != timeinfo->tm_wday 
+      && timeinfo->tm_mday > early_possible_date ) {
+    timeinfo->tm_mday--;
+    mktime(timeinfo);
+  }
+}
+
 int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
   int result = 0;
   struct tm * timeinfo = (struct tm *) calloc(1, sizeof(struct tm));
@@ -25,13 +33,9 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
   int matched_weekday_index = find_string_in_array(week_day, WEEK_DAYS, 7);
 
   if ( !strcmp(meet_day, TEENTH_MEET_DAY) ) {
-    update_month_and_year(year, month, 13, timeinfo);
+    update_month_and_year(year, month, 19, timeinfo);
+    query_possible_dates_within_limit(matched_weekday_index, 12, timeinfo);
 
-    while ( matched_weekday_index != timeinfo->tm_wday 
-            && timeinfo->tm_mday < 20 ) {
-      timeinfo->tm_mday++;
-      mktime(timeinfo);
-    }
   } else if ( !strcmp(meet_day, LAST_MEET_DAY) ) {
     int max_cal_days = MONTH_DAYS[month - 1]; 
     update_month_and_year(year, month, max_cal_days, timeinfo);
@@ -40,12 +44,8 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
       timeinfo->tm_mday--;
       mktime(timeinfo);
     }
-
-    while ( matched_weekday_index != timeinfo->tm_wday 
-            && timeinfo->tm_mday > (max_cal_days - 7) ) {
-      timeinfo->tm_mday--;
-      mktime(timeinfo);
-    }
+  
+    query_possible_dates_within_limit(matched_weekday_index, max_cal_days - 7, timeinfo);
   } else {
     update_month_and_year(year, month, 1, timeinfo);
 
