@@ -45,19 +45,15 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
       mktime(timeinfo);
     }
   } else {
-    int nth_day = match_nth_meet_day(meet_day); 
-    int week_day_offset = nth_day * 7;
+    int week_day_offset = match_nth_meet_day(meet_day) * 7;
 
     update_month_and_year(year, month, 1, timeinfo);
-
     int offset = timeinfo->tm_wday;
 
     if ( matched_weekday_index != offset ) {
-
       int weekoffset = matched_weekday_index > offset ? matched_weekday_index : matched_weekday_index + 7;
 
       timeinfo->tm_mday += week_day_offset;
-      assert(week_day_offset==0);
       mktime(timeinfo);
       timeinfo->tm_mday += weekoffset - offset;
     }
