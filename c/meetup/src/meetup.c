@@ -1,20 +1,9 @@
 #include "meetup.h"
 
-static int match_weekday(char week_day[]) {
+static int find_string_in_array(char target_str[], const char* array_under_search[], int array_length) {
   int result = 0;  
-  for ( int i = 0; i < 7; i++ ) {
-    if ( !strcmp(week_day, WEEK_DAYS[i]) ) {
-      result = i;
-    }
-  }
-
-  return result;
-}
-
-static int match_nth_meet_day(char meet_day[]) {
-  int result = 0;  
-  for ( int i = 0; i < 5; i++ ) {
-    if ( !strcmp(meet_day, NUMBERED_MEET_DAY[i]) ) {
+  for ( int i = 0; i < array_length; i++ ) {
+    if ( !strcmp(target_str, array_under_search[i]) ) {
       result = i;
     }
   }
@@ -35,7 +24,7 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
 
   timeinfo = (struct tm *) calloc(1, sizeof(struct tm));
 
-  int matched_weekday_index = match_weekday(week_day);
+  int matched_weekday_index = find_string_in_array(week_day, WEEK_DAYS, 7);
 
   if ( !strcmp(meet_day, TEENTH_MEET_DAY) ) {
     update_month_and_year(year, month, 13, timeinfo);
@@ -59,7 +48,7 @@ int meetup_day_of_month(int year, int month, char meet_day[], char week_day[]) {
       mktime(timeinfo);
     }
   } else {
-    int week_day_offset = match_nth_meet_day(meet_day) * 7;
+    int week_day_offset = find_string_in_array(meet_day, NUMBERED_MEET_DAY, 5) * 7;
     update_month_and_year(year, month, 1, timeinfo);
     timeinfo->tm_mday += week_day_offset;
     mktime(timeinfo);
