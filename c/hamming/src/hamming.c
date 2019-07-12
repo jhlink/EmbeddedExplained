@@ -1,6 +1,6 @@
 #include "hamming.h"
 
-static int count_char_diffs(char strand_a[], char strand_b[], int strand_len) {
+static int count_char_diffs(const char strand_a[], const char strand_b[], const int strand_len) {
   int char_diffs = 0;  
   for ( int i = 0; i < strand_len; i++ ) {
     if (strand_a[i] != strand_b[i]) char_diffs++;
@@ -8,7 +8,7 @@ static int count_char_diffs(char strand_a[], char strand_b[], int strand_len) {
   return char_diffs;
 }
 
-int compute(char strand_a[], char strand_b[]) {
+int compute(const char strand_a[], const char strand_b[]) {
   int result = 0;
   if ( !strand_a || !strand_b ) {
     result = -1; 
