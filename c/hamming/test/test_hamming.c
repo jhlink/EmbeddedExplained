@@ -16,13 +16,11 @@ static void test_empty_strands(void)
 
 static void test_rejects_null_strand(void)
 {
-   TEST_IGNORE();               // delete this line to run test
    TEST_ASSERT_EQUAL(-1, compute(NULL, "A"));
 }
 
 static void test_rejects_other_null_strand(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(-1, compute("A", NULL));
 }
 
