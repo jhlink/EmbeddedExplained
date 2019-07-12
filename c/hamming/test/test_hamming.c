@@ -38,25 +38,21 @@ static void test_identical_long_strands(void)
 
 static void test_hamming_distance_for_single_nucleotide_strand(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(1, compute("A", "G"));
 }
 
 static void test_complete_hamming_distance_for_small_strand(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(2, compute("AG", "CT"));
 }
 
 static void test_small_hamming_distance(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(1, compute("AT", "CT"));
 }
 
 static void test_small_hamming_distance_in_longer_strand(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(1, compute("GGACG", "GGTCG"));
 }
 
@@ -74,13 +70,11 @@ static void test_rejects_extra_length_on_other_strand_when_longer(void)
 
 static void test_large_hamming_distance(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(4, compute("GATACA", "GCATAA"));
 }
 
 static void test_hamming_distance_in_very_long_strand(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_EQUAL(9, compute("GGACGGATTCTG", "AGGACGGATTCT"));
 }
 
