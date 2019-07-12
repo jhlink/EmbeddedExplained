@@ -1,5 +1,9 @@
 #Exercism Progress Log
 
+## "Break 'em in"  week...
+Hello World
+Isogram
+
 ##Week #27
 7-3-19 | Acronym  
 7-3-19 | Word Count
