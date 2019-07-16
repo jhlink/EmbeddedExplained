@@ -1,13 +1,13 @@
 #include "rna_transcription.h"
 
-static void replace_nucleotide(char* target) {
-  if ( *target == 'G' ) {
+static void replace_nucleotide(char* target, const char* src ) {
+  if ( *src == 'G' ) {
     *target = 'C';
-  } else if ( *target == 'C' ) {
+  } else if ( *src == 'C' ) {
     *target = 'G';
-  } else if ( *target == 'T' ) {
+  } else if ( *src == 'T' ) {
     *target = 'A';
-  } else if ( *target == 'A' ) {
+  } else if ( *src == 'A' ) {
     *target = 'U';
   } else {
     *target = '\0';
@@ -17,10 +17,9 @@ static void replace_nucleotide(char* target) {
 char* to_rna(const char* dna) { 
   size_t strand_len = strlen(dna);
   char* result = (char*) malloc(sizeof(char) * strand_len + 1);
-  strcpy(result, dna);
 
   for (size_t i = 0; i < strand_len; i++) {
-    replace_nucleotide(result + i); 
+    replace_nucleotide(result + i, dna + i); 
 
     if ( !result[i] ) {
       free(result);
