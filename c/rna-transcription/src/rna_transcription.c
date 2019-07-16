@@ -9,6 +9,8 @@ static void replace_nucleotide(char* target) {
     *target = 'A';
   } else if ( *target == 'A' ) {
     *target = 'U';
+  } else {
+    *target = '\0';
   }
 }
 
@@ -19,6 +21,12 @@ char* to_rna(const char* dna) {
 
   for (size_t i = 0; i < strand_len; i++) {
     replace_nucleotide(result + i); 
+
+    if ( !result[i] ) {
+      free(result);
+      result = NULL;
+      break;
+    }
   }
 
   return result;
