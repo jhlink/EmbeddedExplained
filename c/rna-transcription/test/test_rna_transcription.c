@@ -44,7 +44,6 @@ static void test_transcribes_A_to_U(void)
 
 static void test_transcribes_all_occurrences(void)
 {
-   TEST_IGNORE();
    test_transcription("ACGTGGTCTTAA", "UGCACCAGAAUU");
 }
 
