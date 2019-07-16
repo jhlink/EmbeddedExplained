@@ -3,6 +3,8 @@
 static void replace_nucleotide(char* target) {
   if ( *target == 'G' ) {
     *target = 'C';
+  } else if ( *target == 'C' ) {
+    *target = 'G';
   }
 }
 

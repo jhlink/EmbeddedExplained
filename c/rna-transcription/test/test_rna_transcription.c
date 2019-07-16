@@ -29,7 +29,6 @@ static void test_transcribes_G_to_C(void)
 
 static void test_transcribes_C_to_G(void)
 {
-   TEST_IGNORE();               // delete this line to run test
    test_transcription("C", "G");
 }
 
