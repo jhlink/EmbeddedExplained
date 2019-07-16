@@ -34,7 +34,6 @@ static void test_transcribes_C_to_G(void)
 
 static void test_transcribes_T_to_A(void)
 {
-   TEST_IGNORE();
    test_transcription("T", "A");
 }
 
