@@ -4,7 +4,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 
 #define NUCLEO_COUNT_STRING_TEMPLATE "A:%i C:%i G:%i T:%i"
 
