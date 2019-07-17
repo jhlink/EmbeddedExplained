@@ -5,6 +5,7 @@
 
 void setUp(void)
 {
+
 }
 
 void tearDown(void)
@@ -27,11 +28,34 @@ static void test_empty_strand(void)
    test_strand_count(dna_strand, expected);
 }
 
-static void test_repeated_nucleotide(void)
+static void test_repeated_nucleotide_g(void)
 {
-   TEST_IGNORE();
    const char *dna_strand = "GGGGGGG";
    const char *expected = "A:0 C:0 G:7 T:0";
+
+   test_strand_count(dna_strand, expected);
+}
+
+static void test_repeated_nucleotide_a(void)
+{
+   const char *dna_strand = "AAAAAAA";
+   const char *expected = "A:7 C:0 G:0 T:0";
+
+   test_strand_count(dna_strand, expected);
+}
+
+static void test_repeated_nucleotide_c(void)
+{
+   const char *dna_strand = "CCCCCCC";
+   const char *expected = "A:0 C:7 G:0 T:0";
+
+   test_strand_count(dna_strand, expected);
+}
+
+static void test_repeated_nucleotide_t(void)
+{
+   const char *dna_strand = "TTTTTTT";
+   const char *expected = "A:0 C:0 G:0 T:7";
 
    test_strand_count(dna_strand, expected);
 }
@@ -60,7 +84,10 @@ int main(void)
    UnityBegin("test/test_nucleotide_count.c");
 
    RUN_TEST(test_empty_strand);
-   RUN_TEST(test_repeated_nucleotide);
+   RUN_TEST(test_repeated_nucleotide_g);
+   RUN_TEST(test_repeated_nucleotide_a);
+   RUN_TEST(test_repeated_nucleotide_c);
+   RUN_TEST(test_repeated_nucleotide_t);
    RUN_TEST(test_multiple_nucleotides);
    RUN_TEST(test_invalid_nucleotide);
 
