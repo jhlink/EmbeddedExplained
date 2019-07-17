@@ -11,28 +11,39 @@ static void create_nucleo_result_string(char dest_buff[], const nucleo_count* nu
   }
 }
 
-char* count(const char dna_strand[]) 
-{
-  size_t strand_len = strlen(dna_strand);
-  nucleo_count* nucleo_ct = (nucleo_count*) calloc(1, sizeof(nucleo_count)); 
-  char* nucleo_ct_result = (char*) malloc(2);
+static int parse_strand(nucleo_count* nucleo_ct, const char strand[]) {
+  size_t strand_len = strlen(strand);
 
-  if (strand_len > 0) {
+  if ( strand_len ) {
     for ( size_t i = 0; i < strand_len; i++ ) {
-      if (dna_strand[i] == 'G') {
+      if (strand[i] == 'G') {
         nucleo_ct->G++;
-      } else if (dna_strand[i] == 'T') {
+      } else if (strand[i] == 'T') {
         nucleo_ct->T++;
-      } else if (dna_strand[i] == 'C') {
+      } else if (strand[i] == 'C') {
         nucleo_ct->C++;
-      } else  if (dna_strand[i] == 'A') {
+      } else  if (strand[i] == 'A') {
         nucleo_ct->A++;
       } else {
-        free(nucleo_ct);
-        nucleo_ct = NULL;
+        strand_len = -1;
         break;
       }
     }
+  }
+
+  return strand_len;
+}
+
+char* count(const char dna_strand[]) 
+{
+  nucleo_count* nucleo_ct = (nucleo_count*) calloc(1, sizeof(nucleo_count)); 
+  char* nucleo_ct_result = (char*) malloc(2);
+
+  int result = parse_strand(nucleo_ct, dna_strand);
+
+  if ( result < 0 ) {
+    free (nucleo_ct);
+    nucleo_ct = NULL;
   }
 
   create_nucleo_result_string(nucleo_ct_result, nucleo_ct);
