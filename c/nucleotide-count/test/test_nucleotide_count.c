@@ -71,7 +71,6 @@ static void test_multiple_nucleotides(void)
 
 static void test_invalid_nucleotide(void)
 {
-   TEST_IGNORE();
    const char *dna_strand = "AGXXACT";
    const char *expected = "";
 
