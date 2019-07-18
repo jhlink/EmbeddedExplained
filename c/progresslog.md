@@ -17,6 +17,7 @@ Isogram
 
 ##Week \#29
 7-16-19 | RNA Transcription
+7-17-19 | Nucleotide Count
 
 #Note 
 
