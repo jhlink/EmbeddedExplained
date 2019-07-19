@@ -1,7 +1,9 @@
 #ifndef GRAINS_H
 #define GRAINS_H
 
-unsigned long long square(const unsigned long square_index);
+#include <stdbool.h>
+
+unsigned long long square(const int square_index);
 unsigned long long total();
 
 #endif

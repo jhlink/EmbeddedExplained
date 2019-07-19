@@ -51,7 +51,6 @@ static void test_square_0_does_not_exist(void)
 
 static void test_square_greater_than_64_does_not_exist(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT(0 == square(65));
 }
 
