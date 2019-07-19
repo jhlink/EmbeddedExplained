@@ -7,5 +7,9 @@ unsigned long long square(const int square_index) {
 }
 
 unsigned long long total() {
-  return 0ull;
+  unsigned long long sum = 0ull;
+  for (int i = 0; i < 65; i++) {
+    sum += square(i); 
+  }
+  return sum;
 }

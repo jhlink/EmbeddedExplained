@@ -56,7 +56,6 @@ static void test_square_greater_than_64_does_not_exist(void)
 
 static void test_total(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT(18446744073709551615ull == total());
 }
 
