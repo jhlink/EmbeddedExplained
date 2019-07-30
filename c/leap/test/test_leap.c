@@ -21,7 +21,6 @@ static void test_any_old_year(void)
 
 static void test_turn_of_the_20th_century(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FALSE(is_leap_year(1900));
 }
 
