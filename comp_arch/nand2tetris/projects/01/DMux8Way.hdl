@@ -16,5 +16,12 @@ CHIP DMux8Way {
     OUT a, b, c, d, e, f, g, h;
 
     PARTS:
-    // Put your code here:
+    /* If the msb (sel[2]) is low, then ignore 2nd Dmux4way gate to
+      ignore duplicates. */
+    And(a=sel[2], b=in, out=msbin);
+    Not(in=sel[2], out=notmsb);
+    And(a=notmsb, b=in, out=nmsbin);
+
+    DMux4Way(in=nmsbin, sel=sel[0..1], a=a, b=b, c=c, d=d);
+    DMux4Way(in=msbin, sel=sel[0..1], a=e, b=f, c=g, d=h);
 }
