@@ -23,6 +23,9 @@ Isogram
 ##Week \#31 
 7-30-19 | Leap
 
+##Week \#33
+8-12-19 | Beer Song
+
 #Note 
 
 Git message log format:
