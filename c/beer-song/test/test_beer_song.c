@@ -24,7 +24,6 @@ static void test_handles_arbitrary_verse(void)
 
 static void test_handles_2_bottles(void)
 {
-   TEST_IGNORE();               // delete this line to run test
    char response[BUFFER_SIZE];
    const char expected[BUFFER_SIZE] =
        "2 bottles of beer on the wall, 2 bottles of beer.\n"
