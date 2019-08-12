@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <assert.h>
 
 #define DEFAULT_BUFFER_SIZE 1024
 

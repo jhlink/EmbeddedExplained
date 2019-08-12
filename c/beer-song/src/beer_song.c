@@ -20,6 +20,13 @@ void verse(char* char_buf, int verse_count) {
 }
 
 void sing(char* char_buf, int start_verse, int end_verse) {
-  printf(char_buf, "%d %d", start_verse, end_verse);
+  memset(char_buf, DEFAULT_BUFFER_SIZE, '\0');
+  int buffer_offset = 0;
+  for (int i = start_verse; i >= end_verse; i--) {
+    verse(char_buf + buffer_offset, i);  
+    buffer_offset = strlen(char_buf); 
+    assert(buffer_offset != 0);
+    if ( i != end_verse ) char_buf[buffer_offset++] = '\n';
+  }
 }
 

@@ -57,7 +57,6 @@ static void test_handles_0_bottles(void)
 
 static void test_sings_several_verses(void)
 {
-   TEST_IGNORE();
    char response[BUFFER_SIZE];
    const char expected[BUFFER_SIZE] =
        "8 bottles of beer on the wall, 8 bottles of beer.\n"
@@ -75,7 +74,6 @@ static void test_sings_several_verses(void)
 
 static void test_sings_the_last_4_verses(void)
 {
-   TEST_IGNORE();
    char response[BUFFER_SIZE];
    const char expected[BUFFER_SIZE] =
        "3 bottles of beer on the wall, 3 bottles of beer.\n"
