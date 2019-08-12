@@ -46,7 +46,6 @@ static void test_handles_1_bottle(void)
 
 static void test_handles_0_bottles(void)
 {
-   TEST_IGNORE();
    char response[BUFFER_SIZE];
    const char expected[BUFFER_SIZE] =
        "No more bottles of beer on the wall, no more bottles of beer.\n"
