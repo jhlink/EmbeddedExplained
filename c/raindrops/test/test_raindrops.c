@@ -36,7 +36,6 @@ static void test_five_yields_plang(void)
 
 static void test_seven_yields_plong(void)
 {
-   TEST_IGNORE();
    convert_drops(7, "Plong");
 }
 
