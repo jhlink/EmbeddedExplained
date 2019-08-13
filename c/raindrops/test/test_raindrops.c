@@ -26,7 +26,6 @@ static void test_one_yields_itself(void)
 
 static void test_three_yields_pling(void)
 {
-   TEST_IGNORE();               // delete this line to run test
    convert_drops(3, "Pling");
 }
 

@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+static const char THREE_PLING[] = "Pling";
+
 char *convert(char result[], int drops);
 
 #endif
