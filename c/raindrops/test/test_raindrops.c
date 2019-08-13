@@ -31,7 +31,6 @@ static void test_three_yields_pling(void)
 
 static void test_five_yields_plang(void)
 {
-   TEST_IGNORE();
    convert_drops(5, "Plang");
 }
 
