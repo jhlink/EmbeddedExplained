@@ -91,7 +91,6 @@ static void test_fifty_two_yields_itself(void)
 
 static void test_one_hundred_five_yields_plingplangplong(void)
 {
-   TEST_IGNORE();
    convert_drops(105, "PlingPlangPlong");
 }
 
