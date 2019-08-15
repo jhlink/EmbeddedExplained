@@ -59,9 +59,10 @@ CHIP ALU {
     Not16(in=fnzout, out=nfnzout);          // Address bitwise not case 
     Mux16(a=fnzout, b=nfnzout, sel=no, out=out, out[0..7]=f8out, out[8..15]=s8out, out[15]=s4out);
 
-    Or8Way(in=f8out, out=firway);      // Addresses zg flag
+    Or8Way(in=f8out, out=firway);      // Addresses zr flag
     Or8Way(in=s8out, out=secorway);
-    And(a=firway, b=secorway, out=zr);
+    Or(a=firway, b=secorway, out=ord16way);
+    Not(in=ord16way, out=zr);
 
     Or(a=s4out, b=false, out=ng);         // Addresses ng flag
 }
