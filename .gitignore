@@ -1,4 +1,5 @@
 *.plist
 *.out
 .DS_Store
+*.dat
 
