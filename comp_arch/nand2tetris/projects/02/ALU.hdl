@@ -27,20 +27,41 @@
 // if (out < 0) set ng = 1
 
 CHIP ALU {
-    IN  
-        x[16], y[16],  // 16-bit inputs        
-        zx, // zero the x input?
-        nx, // negate the x input?
-        zy, // zero the y input?
-        ny, // negate the y input?
-        f,  // compute out = x + y (if 1) or x & y (if 0)
-        no; // negate the out output?
+  IN  
+    x[16], y[16],  // 16-bit inputs        
+    zx, // zero the x input?
+    nx, // negate the x input?
+    zy, // zero the y input?
+    ny, // negate the y input?
+    f,  // compute out = x + y (if 1) or x & y (if 0)
+    no; // negate the out output?
 
-    OUT 
-        out[16], // 16-bit output
-        zr, // 1 if (out == 0), 0 otherwise
-        ng; // 1 if (out < 0),  0 otherwise
+  OUT 
+    out[16], // 16-bit output
+    zr, // 1 if (out == 0), 0 otherwise
+    ng; // 1 if (out < 0),  0 otherwise
 
-    PARTS:
-   // Put you code here:
+  PARTS:
+    Mux16(a=x, b=false, sel=zx, out=zxout);  // Address zx case
+  
+    Not16(in=zxout, out=znxout);            // Address nx case
+    Mux16(a=zxout, b=znxout, sel=nx, out=znxfout);  
+    
+    Mux16(a=y, b=false, sel=zy, out=zyout);  // Address zy case
+  
+    Not16(in=zyout, out=znyout);            // Address ny case
+    Mux16(a=zyout, b=znyout, sel=ny, out=znyfout);  
+
+    Add16(a=znxfout, b=znyfout, out=sumout);  // Address 2's comp + case
+    And16(a=znxfout, b=znyfout, out=andout);               // Address bitwise & case
+    Mux16(a=andout, b=sumout, sel=f, out=fnzout);
+
+    Not16(in=fnzout, out=nfnzout);          // Address bitwise not case 
+    Mux16(a=fnzout, b=nfnzout, sel=no, out=out, out[0..7]=f8out, out[8..15]=s8out, out[15]=s4out);
+
+    Or8Way(in=f8out, out=firway);      // Addresses zg flag
+    Or8Way(in=s8out, out=secorway);
+    And(a=firway, b=secorway, out=zr);
+
+    Or(a=s4out, b=false, out=ng);         // Addresses ng flag
 }
