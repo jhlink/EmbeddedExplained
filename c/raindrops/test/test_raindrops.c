@@ -71,7 +71,6 @@ static void test_twenty_one_yields_plingplong(void)
 
 static void test_twenty_five_yields_plang(void)
 {
-   TEST_IGNORE();
    convert_drops(25, "Plang");
 }
 
@@ -82,7 +81,6 @@ static void test_thirty_five_yields_plangplong(void)
 
 static void test_forty_nine_yields_plong(void)
 {
-   TEST_IGNORE();
    convert_drops(49, "Plong");
 }
 
