@@ -12,3 +12,53 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+
+  @8192
+  D=A
+  @scrn_max
+  M=D
+  @scrn_pos
+  M=0 
+
+(KEYLP)
+  @KBD
+  D=M
+  @BLACK_FWD
+  D; JNE
+
+  @scrn_pos
+  D=M
+
+  @SCREEN
+  A=A+D
+  M=0
+
+  @scrn_pos
+  D=M
+  @KEYLP
+  D; JEQ
+  @scrn_pos
+  M=M-1
+
+  @KEYLP
+  0;JMP
+
+(BLACK_FWD)
+  @scrn_pos
+  D=M
+  @scrn_max
+  D=D-M
+  @KEYLP
+  D; JEQ
+  @scrn_pos
+  D=M
+
+  @SCREEN
+  A=A+D
+  M=-1
+
+  @scrn_pos
+  M=M+1
+
+  @KEYLP 
+  0;JMP
