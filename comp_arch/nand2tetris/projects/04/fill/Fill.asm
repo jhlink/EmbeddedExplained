@@ -13,14 +13,14 @@
 
 // Put your code here.
 
-  @8192
+  @8192       //  Screen size 1D length from 32(columns) * 256(rows)
   D=A
   @scrn_max
   M=D
   @scrn_pos
   M=0 
 
-(KEYLP)
+(KEYLP)       //  Start of infinite loop
   @KBD
   D=M
   @BLACK_FWD
@@ -29,36 +29,36 @@
   @scrn_pos
   D=M
 
-  @SCREEN
+  @SCREEN     //  Set pixel at scrn_pos offset to white
   A=A+D
   M=0
 
-  @scrn_pos
+  @scrn_pos   //  If scrn_pos offset == 0, jump to KEYLP 
   D=M
   @KEYLP
   D; JEQ
-  @scrn_pos
+  @scrn_pos   //  Else decrement then to KEYLP 
   M=M-1
 
-  @KEYLP
+  @KEYLP      //  Repeat loop
   0;JMP
 
 (BLACK_FWD)
-  @scrn_pos
+  @scrn_pos   //  If scrn_pos offset reached scrn_max (8192) 
   D=M
   @scrn_max
   D=D-M
-  @KEYLP
+  @KEYLP      //  Jump to KEYLP
   D; JEQ
-  @scrn_pos
+  @scrn_pos   
   D=M
 
-  @SCREEN
+  @SCREEN     //  Set pixel to scrn_pos offset to black
   A=A+D
   M=-1
 
-  @scrn_pos
+  @scrn_pos   //  Increment scrn_pos for next iteration
   M=M+1
 
-  @KEYLP 
+  @KEYLP      //  Repeat loop
   0;JMP
